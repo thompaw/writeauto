@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/8049520/web-scraping-javascript-page-with-python
+https://webscraping.pro/javascript-rendering-library-for-scraping-javascript-sites/ 
