@@ -13,5 +13,13 @@ service = Service(executable_path=ChromeDriverManager().install())
 
 driver = webdriver.Chrome(service=service, options=ops) # initialize a new webdriver using the previous driver, and the prior options
 
+def get_data(infile_path):  # function to get raw data
+    # function needs to: 
+    # 1. read the file and get a list of all of the links listed
+    # 2. recognize which sites are used, in order to determine what kind of scraping should be used
+    # 3. get raw data from each site and return it in a pretty manner
+    pass
+
+
 # clean up code, will exit the driver when done
 driver.quit()
