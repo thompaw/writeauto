@@ -1,11 +1,17 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 ops = Options()
-ops.headless = True  # make it headless to avoid clutter
+ops.add_argument("--window-size=1920,1080")  # set window size to native GUI size
+ops.add_argument("start-maximized") # start maximized
+ops.add_argument("--headless") # make a headless browser
 
-driver_path = '/geckodriver.exe'  # path to driver's executable
-ffdriver = webdriver.Firefox(executable_path=driver_path, option=ops)  # initialize firefox driver with the prior exe, use established options
+# use the webdriver manager to auto-install and implement the necessary web driver
+service = Service(executable_path=ChromeDriverManager().install()) 
 
-# clean up to exit driver after content is retrieved
-ffdriver.quit()
+driver = webdriver.Chrome(service=service, options=ops) # initialize a new webdriver using the previous driver, and the prior options
+
+# clean up code, will exit the driver when done
+driver.quit()
