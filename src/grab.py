@@ -18,16 +18,24 @@ class webDriver:
         # initialize a new webdriver using the previous driver, and the prior options
         self.driver = webdriver.Chrome(service=self.service, options=ops)
 
-    def get_sites(self, infile):
+    def get_sites(self, path_to_file):
+        list_o_links = []
         # function needs to:
         # 1. read the file and get a list of all of the links listed
+        with open(path_to_file, 'r') as f:
+            lines = f.readlines()
+            for line in lines:
+                line = line.replace("\n","")  # remove newline escape
+                list_o_links.append(line)
         # 2. return a list of links to be used in get_data function
-        pass
+        return list_o_links
 
     def get_data(self, link):  # function to get raw data
         # function needs to: 
-        # 2. recognize which sites are used, in order to determine what kind of scraping should be used
-        # 3. get raw data from each site and return it in a pretty manner
+        # 1. recognize which sites are used, in order to determine what kind of scraping should be used
+
+        # 2. get raw data from each site and return it in a pretty manner
+
         pass
 
     def end(self):
