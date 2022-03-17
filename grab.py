@@ -30,6 +30,6 @@ class webDriver:
         # 3. get raw data from each site and return it in a pretty manner
         pass
 
-
-# clean up code, will exit the driver when done
-driver.quit()
+    def end(self):
+        # clean up code, will exit the driver when done
+        self.driver.quit()
