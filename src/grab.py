@@ -35,8 +35,8 @@ class webDriver:
         # 1. recognize which sites are used, in order to determine what kind of scraping should be used
 
         # 2. get raw data from each site and return it in a pretty manner
-
-        pass
+        data = self.driver.get(url=link)
+        return data
 
     def end(self):
         # clean up code, will exit the driver when done
