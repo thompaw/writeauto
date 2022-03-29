@@ -30,7 +30,8 @@ class webDriver:
         return data
 
     def from_hackerone(self, link):
-        pass
+        data = self.driver.get(url=link)
+        print(data)
 
     def end(self):
         # clean up code, will exit the driver when done
