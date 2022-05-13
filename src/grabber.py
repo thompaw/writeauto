@@ -26,7 +26,7 @@ class webDriver:
         if site_name == "hackerone":
             data = self.from_hackerone(link)
         else:
-            data = self.driver.get(url=link)
+            print('links that are not hackerone are not supported yet.')
         return data
 
     def from_hackerone(self, link):
